@@ -1,0 +1,81 @@
+@white     : #FFFFFF;
+@whiteish  : #F3F1F2;
+
+@lightdark : #C8CCCF;
+@darkish   : #666;
+@dark      : #4F4F4F;
+
+/* Project-specific styles go here */
+#root {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    .mainvis {
+        /* Sandwich pattern */
+        & > * {
+            padding: 0em 8em 0em 6em;
+            &:first-child {
+                padding-top: 3em;
+            }
+            &:last-child {
+                padding-bottom: 5em;
+            }
+        }
+        svg {
+            height: 400px;
+        }
+        .titlebox {
+            color: @darkish;
+            select {
+                max-width: 100%;
+                padding          : 0.4em 0.6em;
+                background-color : RGBA(0,0,0,0);
+                border           : @lightdark 1px solid;
+                color            : @dark;
+                font-size        : 1.25em;
+                font-weight      : bold;
+            }
+            #diffStr {
+                font-weight: bold;
+            }
+            .text {
+                margin-top: 0.5em;
+                font-size: 0.9em;
+            }
+        }
+    }
+}
+
+@media (max-width : 800px) {
+    #root {
+        .mainvis {
+            /* Sandwich pattern */
+            & > * {
+                &:first-child {
+                    padding: 0em 2em 0em 2em;
+                    padding-top: 3em;
+                }
+                &:last-child {
+                    padding: 0em 5em 0em 2em;
+                    padding-bottom: 5em;
+                }
+            }
+            .titlebox {
+                .text > * {
+                    display: inline;
+                }
+            }
+            svg {
+                height: 50vh;
+            }
+            .line {
+                .label {
+                    font-size: 0.8em;
+                }
+            }
+            .yAxis {
+                display: none;
+            }
+        }
+    }
+}
