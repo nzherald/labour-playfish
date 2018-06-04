@@ -41,13 +41,13 @@ class Main {
                 const title = curr[0].measure,
                       diffVal = _.sumBy(curr[1].data, "val") - _.sumBy(curr[0].data, "val"),
                       diffStr = PF.format.val(Math.abs(diffVal)) + ((diffVal > 0) ? " more" : " less")
+                history.pushState({measure}, measure, "?" + measure)
                 PF.setData(curr)
                 d3.select("#diffStr").html(diffStr)
                 d3.select("#measureName").html(title)
             })
-            .val("Operational allowance")
+            .val(decodeURIComponent(location.search.substr(1)) || "Health")
             .trigger("change")
-
         this.fadeOut()
     }
 
