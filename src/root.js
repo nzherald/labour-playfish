@@ -62,7 +62,7 @@ class Main {
 
     cleanData (rawData) {
         console.log("Raw data:", rawData)
-        const years = ["2018/19", "2019/20", "2020/21", "2021/22"]
+        const years = ["2017/18", "2018/19", "2019/20", "2020/21", "2021/22"]
         return _.map(rawData, d => {
             return {
                 measure: d.measure,
